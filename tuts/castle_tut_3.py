@@ -1,7 +1,7 @@
 #import libraries
 import pygame
 import math
-from enemy import Enemy
+from tuts.enemy import Enemy
 
 #initialise pygame
 pygame.init()

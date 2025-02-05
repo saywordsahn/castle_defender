@@ -2,8 +2,8 @@
 import pygame
 import math
 import random
-from enemy import Enemy
-import button
+from tuts.enemy import Enemy
+from tuts import button
 
 #initialise pygame
 pygame.init()

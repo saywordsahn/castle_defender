@@ -2,7 +2,7 @@
 import pygame
 import math
 import random
-from enemy import Enemy
+from tuts.enemy import Enemy
 
 #initialise pygame
 pygame.init()

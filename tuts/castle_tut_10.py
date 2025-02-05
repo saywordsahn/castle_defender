@@ -42,8 +42,8 @@ tower_positions = [
 
 
 #load high score
-if os.path.exists('score.txt'):
-	with open('score.txt', 'r') as file:
+if os.path.exists('../score.txt'):
+	with open('../score.txt', 'r') as file:
 		high_score = int(file.read())
 
 #define colours
@@ -56,19 +56,19 @@ font_60 = pygame.font.SysFont('Futura', 60)
 
 
 #load images
-bg = pygame.image.load('img/bg.png').convert_alpha()
+bg = pygame.image.load('../img/bg.png').convert_alpha()
 #castle
-castle_img_100 = pygame.image.load('img/castle/castle_100.png').convert_alpha()
-castle_img_50 = pygame.image.load('img/castle/castle_50.png').convert_alpha()
-castle_img_25 = pygame.image.load('img/castle/castle_25.png').convert_alpha()
+castle_img_100 = pygame.image.load('../img/castle/castle_100.png').convert_alpha()
+castle_img_50 = pygame.image.load('../img/castle/castle_50.png').convert_alpha()
+castle_img_25 = pygame.image.load('../img/castle/castle_25.png').convert_alpha()
 
 #tower
-tower_img_100 = pygame.image.load('img/tower/tower_100.png').convert_alpha()
-tower_img_50 = pygame.image.load('img/tower/tower_50.png').convert_alpha()
-tower_img_25 = pygame.image.load('img/tower/tower_25.png').convert_alpha()
+tower_img_100 = pygame.image.load('../img/tower/tower_100.png').convert_alpha()
+tower_img_50 = pygame.image.load('../img/tower/tower_50.png').convert_alpha()
+tower_img_25 = pygame.image.load('../img/tower/tower_25.png').convert_alpha()
 
 #bullet image
-bullet_img = pygame.image.load('img/bullet.png').convert_alpha()
+bullet_img = pygame.image.load('../img/bullet.png').convert_alpha()
 b_w = bullet_img.get_width()
 b_h = bullet_img.get_height()
 bullet_img = pygame.transform.scale(bullet_img, (int(b_w * 0.075), int(b_h * 0.075)))
@@ -98,9 +98,9 @@ for enemy in enemy_types:
 
 #button images
 #repair image
-repair_img = pygame.image.load('img/repair.png').convert_alpha()
+repair_img = pygame.image.load('../img/repair.png').convert_alpha()
 #armour image
-armour_img = pygame.image.load('img/armour.png').convert_alpha()
+armour_img = pygame.image.load('../img/armour.png').convert_alpha()
 
 
 #function for outputting text onto the screen
@@ -260,7 +260,7 @@ class Bullet(pygame.sprite.Sprite):
 
 class Crosshair():
 	def __init__(self, scale):
-		image = pygame.image.load('img/crosshair.png').convert_alpha()
+		image = pygame.image.load('../img/crosshair.png').convert_alpha()
 		width = image.get_width()
 		height = image.get_height()
 
@@ -376,7 +376,7 @@ while run:
 			#update high score
 			if castle.score > high_score:
 				high_score = castle.score
-				with open('score.txt', 'w') as file:
+				with open('../score.txt', 'w') as file:
 					file.write(str(high_score))
 			if pygame.time.get_ticks() - level_reset_time > 1500:
 				next_level = False
