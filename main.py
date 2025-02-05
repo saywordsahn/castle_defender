@@ -47,13 +47,15 @@ def load_imgs_from_folder(path: str):
 class Goblin:
 
     def __init__(self, x, y):
-        self.idle_animation = Animation(load_imgs_from_folder('path goes here'), True)
+        self.idle_animation = Animation(load_imgs_from_folder('path goes here'), True, .3)
         self.rect = pygame.Rect(x, y, 20, 20)
-
+        self.speed = 5.0
         self.current_animation = self.idle_animation
 
     def update(self, dt):
         self.current_animation.update(dt)
+
+        self.rect.x += self.speed * dt / 100
 
     def draw(self, screen):
         screen.blit(self.current_animation.get_image(), self.rect)

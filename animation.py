@@ -1,9 +1,9 @@
 class Animation:
 
-    def __init__(self, images, is_looped: bool):
+    def __init__(self, images, is_looped: bool, speed: float=.1):
         self.images = images
         self.current_frame_index = 0
-        self.animation_time = .1
+        self.animation_time = speed
         self.current_time = 0
         self.last_updated_time = 0
         self.is_looped = is_looped
